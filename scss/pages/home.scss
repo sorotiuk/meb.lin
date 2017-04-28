@@ -4,11 +4,98 @@
 // home page style
 
 .hero{
-  border-bottom: 0.5rem solid $prime;
+  border-bottom: 0.5rem solid $second;
   position: relative;
   //background: url("../../img/home/bg/hero-bg-0.jpg") no-repeat center center;
   //background-size: cover;
   //height: 150rem;
+
+  header{
+    background: linear-gradient($grayShade, transparent);
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+    @media (max-width: $screen-md){
+      padding-top: 1rem;
+    }
+
+    .logo-name {
+      font-size: 2.4rem;
+      color: $black;
+      font-weight: 500;
+
+      @media (max-width: $screen-md){
+        font-size: 1.8rem;
+      }
+    }
+
+    .hamburger{
+      visibility: hidden;
+
+      @media (max-width: $screen-sm) {
+        visibility: visible;
+      }
+    }
+
+    .hero-nav{
+      display: inline;
+
+      @media (max-width: $screen-sm) {
+        display: none;
+      }
+    }
+
+    .nav-item{
+      margin-top: 1.5rem;
+      padding-left: 3rem;
+      font-size: 1.5rem;
+      color: $darkGray;
+      cursor: pointer;
+      line-height: 1;
+      display: inline-block;
+      text-decoration: none;
+      font-weight: 700;
+
+      &:hover{
+        text-decoration: none;
+        color: $white;
+      }
+
+      &:after {
+        margin-top: 0.5rem;
+        display: block;
+        content: "";
+        height: 2px;
+        width: 0%;
+        background-color: $second;
+        transition: width .3s ease-in-out;
+
+      }
+      &:hover:after,
+      &:focus:after {
+        width: 100%;
+      }
+
+      @media (max-width: $screen-md){
+        margin-top: 1rem;
+      }
+      @media (max-width: $screen-sm-min) {
+        //visibility: hidden;
+        display: block;
+        font-size: 1.5rem;
+        padding-left: 0rem;
+        margin-bottom: 1rem;
+      }
+    }
+
+    .nav-active{
+      text-decoration: none;
+      color: $white;
+    }
+  }
 
   .hero-title{
     text-shadow: 2px 2px 4px black;
@@ -120,6 +207,13 @@
     top: 65%;
     transform: translateY(-65%);
 
+  }
+
+  .scroll-icon{
+    position: absolute;
+    bottom: 2rem;
+    width: 100%;
+    text-align: center;
   }
 
 }
