@@ -2,10 +2,6 @@
  * Created by admin on 28.04.17.
  */
 
-/**
- * Created by admin on 01.03.17.
- */
-
 var gulp = require('gulp'),
     del = require('del'),
     concat = require('gulp-concat'),
@@ -15,7 +11,7 @@ var gulp = require('gulp'),
     sourcemaps = require('gulp-sourcemaps'),
     browser = require("browser-sync").create();
 
-var path = {
+var paths = {
     js : './js/**/*.js',
     jsdir : './js',
     script : './scripts/**/*.js',
@@ -29,46 +25,46 @@ var path = {
 
 gulp.task('clean', function () {
     del.sync([
-        path.jsdir,
-        path.cssdir
+        paths.jsdir,
+        paths.cssdir
     ]);
 });
 
 gulp.task('sass:dev', function () {
-    return gulp.src(path.scss)
+    return gulp.src(paths.scss)
         .pipe(sourcemaps.init())
         .pipe(sass({
             sourceComments: 'normal'
         }).on('error', sass.logError))
         .pipe(size({ showFiles: true }))
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest(path.cssdir))
+        .pipe(gulp.dest(paths.cssdir))
         .pipe(browser.stream());
 });
 
 gulp.task('sass:prod', function () {
-    return gulp.src(path.scss)
+    return gulp.src(paths.scss)
         .pipe(sass({
             outputStyle: 'compressed'
         }).on('error', sass.logError))
-        .pipe(gulp.dest(path.cssdir));
+        .pipe(gulp.dest(paths.cssdir));
 });
 
 gulp.task('js:dev', function () {
-    return gulp.src(path.script)
+    return gulp.src(paths.script)
         .pipe(sourcemaps.init())
         .pipe(size({showFiles: true}))
         .pipe(concat('build.js'))
         .pipe(sourcemaps.write())
         .pipe(size({showFiles: true}))
-        .pipe(gulp.dest(path.jsdir));
+        .pipe(gulp.dest(paths.jsdir));
 });
 
 gulp.task('js:prod', function () {
-    return gulp.src(path.script)
+    return gulp.src(paths.script)
         .pipe(concat('build.js'))
         .pipe(min())
-        .pipe(gulp.dest(path.jsdir));
+        .pipe(gulp.dest(paths.jsdir));
 });
 
 gulp.task('watch', function () {
@@ -78,9 +74,9 @@ gulp.task('watch', function () {
         }
     });
 
-    gulp.watch(path.scss, ['sass:dev']);
-    gulp.watch(path.script, ['js:dev']);
-    gulp.watch([path.html, path.js]).on('change', browser.reload);
+    gulp.watch(paths.scss, ['sass:dev']);
+    gulp.watch(paths.script, ['js:dev']);
+    gulp.watch([paths.html, paths.js]).on('change', browser.reload);
 });
 
 gulp.task('default', ['clean', 'js:dev', 'sass:dev', 'watch']);
