@@ -4,29 +4,92 @@
     <meta charset="UTF-8">
     <title>Meb.Lin</title>
 
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="./css/pages/home.css">
 </head>
 <body>
 
-<section class="hero bg-gray">
-    <div>section hero</div>
+<section class="hero bg-gray" id="home">
+    <div id="myCarousel" class="carousel fade" data-ride="carousel">
+        <div class="carousel-inner text-center">
+            <div class="active item">
+                <img class="carousel-im-0" width="100%">
+                <div class="carousel-caption">
+                    <h1 class="hero-title">Meb.Lin</h1>
+                    <h3 class="hero-title-description">Корпусная мебель по индивидуальному дизайну</h3>
+                </div>
+            </div>
+            <div class="item">
+                <img class="carousel-im-1" width="100%">
+                <div class="carousel-caption">
+                    <h1 class="hero-title">Meb.Lin</h1>
+                    <h3 class="hero-title-description">Прихожие, гостинные, гардеробные, ванные</h3>
+                    <h3 class="hero-title-description">по индивидуальному дизайну</h3>
+                </div>
+            </div>
+            <div class="item">
+                <img class="carousel-im-2" width="100%">
+                <div class="carousel-caption">
+                    <h1 class="hero-title">Meb.Lin</h1>
+                    <h3 class="hero-title-description">Производство корпусной мебели</h3>
+                </div>
+            </div>
+        </div>
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+            <div class="helper"></div>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+            <div class="helper"></div>
+        </a>
+    </div>
+
+    <header class="wrap cf">
+        <div class="logo-name pull-left">meb.lin</div>
+
+        <div class="hamburger pull-right _hamburger">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+        </div>
+        <nav class="hero-nav pull-right _nav" id="menu-center">
+            <ul class="list-unstyled">
+                <li class="inline"><a href="#home" class="nav-item nav-active">ГЛАВНАЯ</a></li>
+                <li class="inline"><a href="#about" class="nav-item">УСЛУГИ</a></li>
+                <li class="inline"><a href="#portfolio" class="nav-item">РАБОТЫ</a></li>
+                <li class="inline"><a href="#contact" class="nav-item">КОНТАКТЫ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="scroll-icon">
+        <img src="../../img/home/items/scrolldown.gif" width="100">
+    </div>
+
 </section>
 
-<section class="bg-white">
+<section class="bg-white mb-50" id="about">
     <div>section about</div>
 </section>
 
-<section class="bg-gray">
+<section class="bg-gray mb-50" id="portfolio">
     <div>section portfolio</div>
 </section>
 
-<section class="bg-white">
+<section class="bg-white mb-50" id="contact">
     <div> section contacts</div>
 </section>
 
+
+<script
+        src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous"></script>
+<script src="node_modules/bootstrap-sass/assets/javascripts/bootstrap/modal.js"></script>
+<script src="node_modules/bootstrap-sass/assets/javascripts/bootstrap/carousel.js"></script>
 <script src="./js/build.js"></script>
 
 </body>

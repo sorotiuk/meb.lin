@@ -4,5 +4,216 @@
 // home page style
 
 .hero{
-  background-color: $prime;
+  border-bottom: 0.5rem solid $second;
+  position: relative;
+  //background: url("../../img/home/bg/hero-bg-0.jpg") no-repeat center center;
+  //background-size: cover;
+  //height: 150rem;
+
+  header{
+    background: linear-gradient($grayShade, transparent);
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+    @media (max-width: $screen-md){
+      padding-top: 1rem;
+    }
+
+    .logo-name {
+      font-size: 2.4rem;
+      color: $black;
+      font-weight: 500;
+
+      @media (max-width: $screen-md){
+        font-size: 1.8rem;
+      }
+    }
+
+    .hamburger{
+      visibility: hidden;
+
+      @media (max-width: $screen-sm) {
+        visibility: visible;
+      }
+    }
+
+    .hero-nav{
+      display: inline;
+
+      @media (max-width: $screen-sm) {
+        display: none;
+      }
+    }
+
+    .nav-item{
+      margin-top: 1.5rem;
+      padding-left: 3rem;
+      font-size: 1.5rem;
+      color: $darkGray;
+      cursor: pointer;
+      line-height: 1;
+      display: inline-block;
+      text-decoration: none;
+      font-weight: 700;
+
+      &:hover{
+        text-decoration: none;
+        color: $white;
+      }
+
+      &:after {
+        margin-top: 0.5rem;
+        display: block;
+        content: "";
+        height: 2px;
+        width: 0%;
+        background-color: $second;
+        transition: width .3s ease-in-out;
+
+      }
+      &:hover:after,
+      &:focus:after {
+        width: 100%;
+      }
+
+      @media (max-width: $screen-md){
+        margin-top: 1rem;
+      }
+      @media (max-width: $screen-sm-min) {
+        //visibility: hidden;
+        display: block;
+        font-size: 1.5rem;
+        padding-left: 0rem;
+        margin-bottom: 1rem;
+      }
+    }
+
+    .nav-active{
+      text-decoration: none;
+      color: $white;
+    }
+  }
+
+  .hero-title{
+    text-shadow: 2px 2px 4px black;
+    position: relative;
+    font-size: 6rem;
+    color: $prime;
+    background-color: $darkDarkGray;
+    width: 40rem;
+    margin-bottom: 3rem;
+
+    @media (max-width: $screen-md) {
+      font-size: 4rem;
+    }
+    @media (max-width: $screen-sm) {
+      font-size: 3rem;
+      width: 100%;
+    }
+
+  }
+
+  .hero-title-description{
+    //text-shadow: 2px 2px 4px black;
+    color: $darkDarkGray;
+    font-size: 2.5rem;
+    @media (max-width: $screen-md) {
+      font-size: 2rem;
+    }
+    @media (max-width: $screen-sm) {
+      font-size: 1.5rem;
+      width: 100%;
+    }
+
+  }
+
+  //======переход для слайдера======
+  .carousel.fade{
+    opacity: 1;
+  }
+  .carousel.fade .item{
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 1s;
+  }
+  .carousel.fade .item.active{
+    position: relative;
+    opacity: 1;
+  }
+  //================================
+
+  .carousel-im-0{
+    content:  url("../../img/home/bg/hero-bg-0.jpg");
+
+    @media (max-width: $screen-md) {
+      content:  url("../../img/home/bg/md-hero-bg-0.jpg");
+    }
+    @media (max-width: $screen-sm) {
+      content:  url("../../img/home/bg/sm-hero-bg-0.jpg");
+    }
+  }
+
+  .carousel-im-1{
+    content:  url("../../img/home/bg/hero-bg-1.jpg");
+
+    @media (max-width: $screen-md) {
+      content:  url("../../img/home/bg/md-hero-bg-1.jpg");
+    }
+    @media (max-width: $screen-sm) {
+      content:  url("../../img/home/bg/sm-hero-bg-1.jpg");
+    }
+  }
+
+  .carousel-im-2{
+    content:  url("../../img/home/bg/hero-bg-2.jpg");
+
+    @media (max-width: $screen-md) {
+      content:  url("../../img/home/bg/md-hero-bg-2.jpg");
+    }
+    @media (max-width: $screen-sm) {
+      content:  url("../../img/home/bg/sm-hero-bg-2.jpg");
+    }
+  }
+
+  .carousel-control {
+    width: 5%;
+  }
+
+  .fa-arrow-left{
+    display:inline-block;
+    vertical-align:middle;
+  }
+
+  .fa-arrow-right{
+    display:inline-block;
+    vertical-align:middle;
+  }
+
+  .helper {
+    display:inline-block;
+    vertical-align:middle;
+    height:100%;
+    width:0px;
+  }
+
+  .carousel-caption{
+    top: 65%;
+    transform: translateY(-65%);
+
+  }
+
+  .scroll-icon{
+    position: absolute;
+    bottom: 2rem;
+    width: 100%;
+    text-align: center;
+  }
+
 }
